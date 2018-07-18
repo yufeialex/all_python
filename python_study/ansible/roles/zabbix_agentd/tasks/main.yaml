@@ -1,0 +1,21 @@
+- name: 配置zabbix_agentd目录
+  copy: src=zabbix dest="{{zabbix_directory}}"
+
+- name: 复制zabbix_agentd启动脚本
+  shell: > 
+         cp 
+         "{{service_script}}" 
+         "{{service_directory}}"   
+          
+- name: 配置zabbix_agentd的service服务脚本权限
+  file: path={{item}} mode=0755
+  with_items:
+    - /usr/local/zabbix/sbin/zabbix_agentd
+    - /etc/init.d/zabbix_agentd
+  notify: 打开开机启动zabbix_agentd服务
+
+- name: 配置zabbix支持主动与被动两种模式
+  template: 
+    src: zabbix_agentd.conf.j2
+    dest: /usr/local/zabbix/etc/zabbix_agentd.conf
+  notify: 启动zabbix_agentd服务

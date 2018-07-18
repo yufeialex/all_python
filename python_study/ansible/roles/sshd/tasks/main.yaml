@@ -1,0 +1,9 @@
+- name: 配置ssh服务
+  copy: src={{inner}} dest="{{conf_dir}}" mode=0600 
+  when: "hosts=='inner'"
+  notify: 重启sshd服务
+
+- name: 配置ssh服务
+  copy: src={{outer}} dest="{{conf_dir}}sshd_config" mode=0600 
+  when: "hosts=='outer'"
+  notify: 重启sshd服务

@@ -1,0 +1,7 @@
+- name: 更新sudoers
+  hosts: all
+  sudo: yes
+  sudo_user: root
+  roles:
+    - {role: sudo, tags: sudo}
+

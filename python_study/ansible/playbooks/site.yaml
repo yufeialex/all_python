@@ -1,0 +1,5 @@
+- name: sz
+  include: sz.yaml
+- name: sh
+  include: sh.yaml
+

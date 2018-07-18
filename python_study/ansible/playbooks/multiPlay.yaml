@@ -1,0 +1,31 @@
+- name: 初始化服务器
+  hosts: 10.9.16.13
+  gather_facts: true
+  tags: play1
+  pre_tasks:
+    - name: 任务开始运行主机
+      debug: var=ansible_default_ipv4.address 
+
+  roles:
+    - role: zabbix_agentd
+      
+  post_tasks:
+    - name: 任务完成主机
+      debug: var=ansible_default_ipv4.address 
+
+####################################################################
+
+- name: 初始化服务器
+  hosts: 10.9.16.12
+  gather_facts: true
+  tags: play2
+  pre_tasks:
+    - name: 任务开始运行主机
+      debug: var=ansible_default_ipv4.address 
+
+  roles:
+    - role: dns
+      
+  post_tasks:
+    - name: 任务完成主机
+      debug: var=ansible_default_ipv4.address 

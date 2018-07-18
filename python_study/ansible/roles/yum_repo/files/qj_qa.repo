@@ -1,0 +1,11 @@
+[qj_qa]
+name=qj_qa
+baseurl=http://139.196.174.68/rpms/qa
+enabled=1
+gpgcheck=0
+
+[qj_python]
+name=qj_python
+baseurl=http://139.196.174.68/rpms/dependencies/python/
+enabled=1
+gpgcheck=0

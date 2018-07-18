@@ -1,0 +1,6 @@
+- name: 配置yum
+  hosts: dev
+  gather_facts: false
+  roles:
+     - {role: yum_repo, tags: yum_repo }
+#     - {role: sudo, tags: yum_repo}

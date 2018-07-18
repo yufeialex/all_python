@@ -1,0 +1,64 @@
+- name: play1 部署app1
+  hosts: app1 IP
+  gather_facts: true
+  tags: play1
+  pre_tasks:
+    - name: 任务开始运行主机
+      debug: var=ansible_default_ipv4.address 
+  roles:
+    - role: app1
+      
+  post_tasks:
+    - name: 任务完成主机
+      debug: var=ansible_default_ipv4.address 
+
+#########################################################################
+
+- name: play2 部署app2
+  hosts: app2 IP
+  gather_facts: true
+  tags: play2
+  pre_tasks:
+    - name: 任务开始运行主机
+      debug: var=ansible_default_ipv4.address 
+
+  roles:
+    - role: app2
+      
+  post_tasks:
+    - name: 任务完成主机
+      debug: var=ansible_default_ipv4.address 
+
+#########################################################################
+
+- name: play3 部署PARSER服务
+  hosts: PARSER服务器IP
+  gather_facts: true
+  tags: play3
+  pre_tasks:
+    - name: 任务开始运行主机
+      debug: var=ansible_default_ipv4.address 
+
+  roles:
+    - role: PARSER
+      
+  post_tasks:
+    - name: 任务完成主机
+      debug: var=ansible_default_ipv4.address 
+
+#########################################################################
+
+- name: play4 部署SWITCH服务
+  hosts: PARSER服务器IP
+  gather_facts: true
+  tags: play4
+  pre_tasks:
+    - name: 任务开始运行主机
+      debug: var=ansible_default_ipv4.address 
+
+  roles:
+    - role: SWITCH
+      
+  post_tasks:
+    - name: 任务完成主机
+      debug: var=ansible_default_ipv4.address 

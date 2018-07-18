@@ -1,0 +1,3 @@
+conf_dir: /etc/ssh/
+inner: sshd_config
+outer: sshd_config_outer

@@ -1,0 +1,131 @@
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+## green.example.com
+## blue.example.com
+## 192.168.100.1
+## 192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+## [webservers]
+## alpha.example.org
+## beta.example.org
+## 192.168.1.100
+## 192.168.1.110
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+## www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+## [dbservers]
+## 
+## db01.intranet.mydomain.net
+## db02.intranet.mydomain.net
+## 10.25.1.56
+## 10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+## db-[99:101]-node.example.com
+[inner]
+10.9.16.[10:13]
+10.9.19.230
+10.9.19.232
+10.9.19.[235:238]
+10.9.19.[240:252]
+
+[outer:children]
+majik
+info
+wealth
+test
+intercept
+
+[outer:vars]
+ansible_ssh_port = 5000
+
+[majik]
+139.196.34.10
+139.196.106.169
+139.196.107.119 
+139.196.196.90
+139.196.108.24
+139.196.177.84
+139.196.235.62 
+139.196.229.71
+
+[info]
+139.196.228.194
+139.196.230.139 
+139.196.199.143
+
+[wealth]
+139.196.174.68
+139.196.173.174
+120.55.164.108
+120.55.166.152
+139.196.177.217
+139.196.175.133
+139.196.235.95
+139.196.234.228
+139.224.186.41
+139.224.186.75
+139.224.66.151
+
+[test]
+139.196.201.225
+120.55.164.178
+139.196.176.179
+139.196.179.4
+139.196.228.231
+120.55.164.40
+139.196.231.76
+139.224.2.18
+139.224.60.236
+139.224.61.5
+139.224.3.197
+120.55.166.86
+139.196.228.68
+
+[intercept]
+139.196.235.122
+
+[only_test]
+10.9.16.10
+
+
+
+
+
+[financeDB]
+139.196.228.231
+139.196.231.76
+120.55.164.178
+
+
+[hs_parser]
+139.196.179.4
+
+
+[new1]
+139.224.2.18
+139.224.60.236
+139.224.61.5
+139.224.3.197
+120.55.166.86
+139.196.228.68
+

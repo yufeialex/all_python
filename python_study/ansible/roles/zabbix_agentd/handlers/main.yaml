@@ -1,0 +1,5 @@
+- name: 打开开机启动zabbix_agentd服务
+  shell: chkconfig zabbix_agentd on
+                
+- name: 启动zabbix_agentd服务
+  service: name=zabbix_agentd state=started

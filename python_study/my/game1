@@ -1,0 +1,12 @@
+# temp=input("请输入一个数字：")
+# i=int(temp)
+# if i == 10:
+#     print("你好聪明")
+# else:
+#     print("你错了")
+# print("游戏结束")
+
+import random
+a = random.randrange(1,10)
+
+print(a)

@@ -1,0 +1,7 @@
+- name: 配置yum源
+  copy: src="{{item}}" dest="{{yum_directory}}"
+  with_items:
+    - CentOS7-Base-163.repo
+    - local.repo
+    - qj_qa.repo
+

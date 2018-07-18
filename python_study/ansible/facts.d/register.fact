@@ -1,0 +1,2 @@
+[local_facts]
+users=[u'min', u'autotest', u'ldapuser1', u'jinwei', u'admin', u'zabbix', u'ops']

@@ -1,0 +1,35 @@
+- name: 设置profile ipv4地址环境变量
+  shell: >
+         echo 
+         "export IPV4_ADDRESS={{ansible_default_ipv4.address}}"
+         >>{{profile}};
+         source {{profile}}
+
+- name: 新建/etc/yff 目录
+  file: path=/etc/yff state=directory
+
+- name: 清空env文件
+  shell: >
+         echo  > {{env}}
+
+- name: 设置env ipv4
+  shell: >
+         echo 
+         "export IPV4_ADDRESS={{ansible_default_ipv4.address}}"
+         >> {{env}}
+  tags: ipv4
+
+- name: 设置env IDC
+  shell: >
+         echo "IDC=SZ" >> {{env}}
+  tags: idc
+
+- name: 设置env 环境
+  shell: |
+         IPV4_ADDRESS={{ansible_default_ipv4.address}}
+         if [[ $IPV4_ADDRESS =~ 10.9.19.* ]];then
+            echo "YF_DEPLOY_ENV=dev" >> {{env}}
+         else
+            echo "YF_DEPLOY_ENV=qa" >> {{env}}
+         fi
+  tags: env

@@ -1,0 +1,31 @@
+- name: 关闭iptables
+  service: name=iptables state=stopped
+  notify: 关闭开机启动防火墙
+  ignore_errors: true
+
+- name: 关闭firewalld
+  service: name=firewalld state=stopped
+  notify: 关闭开机启动防火墙firewalld
+  ignore_errors: true
+
+- name: 关闭postfix服务
+  service: name=postfix state=stopped
+  notify: 关闭开机启动postfix服务
+  ignore_errors: true
+
+- name: 关闭cups服务
+  service: name=cups state=stopped
+  notify: 关闭开机启动cups服务
+  ignore_errors: true
+
+- name: 关闭rpcbind服务
+  service: name=rpcbind state=stopped
+  notify: 关闭开机启动rpmbind服务
+  ignore_errors: true
+
+- name: 停用ipv6
+  sysctl: name='net.ipv6.conf.all.disable_ipv6' value=1
+
+- name: 关闭selinux
+  selinux: state=disabled
+  ignore_errors: true

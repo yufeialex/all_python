@@ -1,0 +1,32 @@
+- name: 加密密码生成器--生成root用户的密码
+  shell: >
+         python -c 
+         'import crypt;print crypt.crypt("{{root_pwd}}", "$1$SomeSalt$")'
+  register: passwd_root    
+
+- name: 加密密码生成器--生成ops用户的密码
+  shell: >
+         python -c 
+         'import crypt;print crypt.crypt("{{ops_pwd}}", "$1$SomeSalt$")'
+  register: passwd_ops
+
+- name: 加密密码生成器--生成dev用户的密码
+  shell: >
+         python -c 
+         'import crypt;print crypt.crypt("{{dev_pwd}}", "$1$SomeSalt$")'
+  register: passwd_dev
+
+- name: 初始化root密码
+  user: name=root password="{{passwd_root.stdout}}"
+
+- name: 添加operations组
+  group: name=operations state=present
+
+- name: 添加developers组
+  group: name=developers state=present     
+
+- name: 添加ops用户
+  user: name=ops group=operations password="{{passwd_ops.stdout}}"
+
+- name: 添加dev用户
+  user: name=dev group=developers password="{{passwd_dev.stdout}}"

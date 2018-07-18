@@ -1,0 +1,31 @@
+- name: 初始化服务器
+  hosts: new
+  gather_facts: true
+  pre_tasks:
+    - name: 任务开始运行主机
+      debug: var=ansible_default_ipv4.address 
+
+  roles:
+    - {role: auth, tags: auth}
+    
+    - {role: users, tags: users}
+    
+    - {role: systemd, tags: systemd}
+
+    - {role: sudo, tags: sudo}
+
+    - {role: sshd, tags: sshd}
+
+    - {role: zabbix_agentd, tags: zabbix_agentd}
+
+    - {role: yum_repo, tags: yum_repo}
+
+    - {role: dns, tags: dns}
+
+    - {role: env, tags: env}
+
+    - {role: tools, tags: tools}
+      
+  post_tasks:
+    - name: 任务完成主机
+      debug: var=ansible_default_ipv4.address 

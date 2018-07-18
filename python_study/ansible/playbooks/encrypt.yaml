@@ -1,0 +1,7 @@
+# author: Allen
+- name: 初始化服务器
+  hosts: 10.9.16.13
+  gather_facts: true
+
+  roles:
+    - role: users

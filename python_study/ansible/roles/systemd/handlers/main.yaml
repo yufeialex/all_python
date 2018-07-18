@@ -1,0 +1,14 @@
+- name: 关闭开机启动防火墙
+  shell: chkconfig iptables off
+
+- name: 关闭开机启动防火墙firewalld
+  shell: chkconfig firewalld off
+
+- name: 关闭开机启动postfix服务
+  shell: chkconfig postfix off
+
+- name: 关闭开机启动cups服务
+  shell: chkconfig cups off
+
+- name: 关闭开机启动rpmbind服务
+  shell: chkconfig rpcbind off
