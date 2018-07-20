@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 '''
 1.
 已知字符串
@@ -22,9 +22,9 @@ print(''.join(b))
 {'a': 4, 'b': 2}
 '''
 a = a.lower()
-print(dict([(x,a.count(x)) for x in set(a)]))
+print(dict([(x, a.count(x)) for x in set(a)]))
 #
-#[(x,a.count(x)) for x in set(a)]
+# [(x,a.count(x)) for x in set(a)]
 
 '''
 1.4
@@ -37,7 +37,7 @@ a_list = list(a)
 set_list = list(set(a_list))
 set_list.sort(key=a_list.index)
 print(''.join(set_list))
-#print(a_list)
+# print(a_list)
 
 '''
 1.5
@@ -48,7 +48,7 @@ print(''.join(set_list))
 print("++++++++++++++1.5")
 a = "aAsmr3idd4bgs7Dlsf9eAF"
 list_a = list(a)
-#set_a = list(set(list_a))
+# set_a = list(set(list_a))
 list_a.reverse()
 print(''.join(list_a))
 
@@ -62,8 +62,8 @@ print(a[::-1])
 '''
 print("+++++++++++1.6")
 a = "aAsmr3idd4bgs7Dlsf9eAFHH"
-#b = [s for s in a if s.islower()]
-#c = [s for s in a if s.isupper()]
+# b = [s for s in a if s.islower()]
+# c = [s for s in a if s.isupper()]
 b = sorted(a)
 upper_list = []
 lower_list = []
@@ -78,7 +78,7 @@ for x in b:
 for y in upper_list:
     y_lower = y.lower()
     if y_lower in lower_list:
-        lower_list.insert(lower_list.index(y_lower),y)
+        lower_list.insert(lower_list.index(y_lower), y)
         print(lower_list.index(y_lower))
 
 print(upper_list)
@@ -105,7 +105,7 @@ else:
 '''
 print("+++++++++++++++1.8")
 a = "aAsmr3idd4bgs7Dlsf9eAFoyHH"
-find = ['boy','girl','bird','dirty']
+find = ['boy', 'girl', 'bird', 'dirty']
 find_set = set(''.join(find))
 b = set(a)
 u = len(b)
@@ -118,7 +118,7 @@ if u == len(b):
 else:
     print("none")
 
-#print(find_set)
+# print(find_set)
 
 '''
 1.9
@@ -127,8 +127,8 @@ else:
 '''
 print("++++++++++1.9")
 a = "aAsmr3idd4bgs7Dlsf9eAFoyHH"
-b = [(x,a.count(x))for x in a]
-b.sort(key=lambda k:k[1],reverse=True)
+b = [(x, a.count(x)) for x in a]
+b.sort(key=lambda k: k[1], reverse=True)
 print(b[0][0])
 
 '''
@@ -137,11 +137,11 @@ print(b[0][0])
 '''
 print("+++++++++++2.0")
 import os
-m = os.popen('python -m this').read()
-m = m.replace('\n','')
-m = m.split(' ')
-print([(x,m.count(x)) for x in ['be','is','than']])
 
+m = os.popen('python -m this').read()
+m = m.replace('\n', '')
+m = m.split(' ')
+print([(x, m.count(x)) for x in ['be', 'is', 'than']])
 
 '''
 3.
@@ -163,4 +163,4 @@ a = [1, 2, 3, 6, 8, 9, 10, 14, 17], 请将该list转换为字符串，例如
 print("++++++++++++++4.0")
 a = [1, 2, 3, 6, 8, 9, 10, 14, 17]
 
-print(str(a)[1:-1].replace(', ',''))
+print(str(a)[1:-1].replace(', ', ''))

@@ -43,18 +43,3 @@ with tf.Session() as sess:
     saver.restore(sess, "my_net/save_net.ckpt")
     print("weights:", sess.run(W))
     print("biases:", sess.run(b))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

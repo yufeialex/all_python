@@ -22,17 +22,3 @@ y = iris.target
 
 
 # this is how to use cross_val_score to choose model and configs #
-
-
-
-
-
-
-
-
-
-
-
-
-
-

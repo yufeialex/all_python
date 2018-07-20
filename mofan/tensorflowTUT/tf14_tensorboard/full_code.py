@@ -49,7 +49,7 @@ sess = tf.Session()
 # tf.train.SummaryWriter soon be deprecated, use following
 if int((tf.__version__).split('.')[1]) < 12 and int((tf.__version__).split('.')[0]) < 1:  # tensorflow version < 0.12
     writer = tf.train.SummaryWriter('logs/', sess.graph)
-else: # tensorflow version >= 0.12
+else:  # tensorflow version >= 0.12
     writer = tf.summary.FileWriter("logs/", sess.graph)
 
 # tf.initialize_all_variables() no long valid from
@@ -62,5 +62,3 @@ sess.run(init)
 
 # direct to the local dir and run this in terminal:
 # $ tensorboard --logdir=logs
-
-

@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 
 '''
 今天习题：
@@ -8,11 +8,10 @@
 (1,2,4)
 
 '''
-a = (1,2,3)
+a = (1, 2, 3)
 b = list(a)
 b[-1] = 4
 print(tuple(b))
-
 
 '''
 二: 利用列表推导完成下面习题：
@@ -22,9 +21,8 @@ print(tuple(b))
 2 输出结果：[(0,0),(0,2),(2,0),(2,2)]
 
 '''
-print(["%s love python" % i for i in range(1,10)])
-print([(x,y) for x in range(0,3,2) for y in range(0,3,2)])
-
+print(["%s love python" % i for i in range(1, 10)])
+print([(x, y) for x in range(0, 3, 2) for y in range(0, 3, 2)])
 
 '''
 三：
@@ -37,7 +35,7 @@ del a
 
 b的值是什么。为什么呢？
 '''
-a = [1,2,3]
+a = [1, 2, 3]
 b = a[:]
 del a
 print(b)

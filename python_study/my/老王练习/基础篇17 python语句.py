@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 
 '''
 今天习题：
@@ -6,8 +6,8 @@
 1 用while语句的2种方法输出数字：1到10
 2 用for语句和continue 输出结果：1 3 5 7 9
 '''
-#方法一
-x=0
+# 方法一
+x = 0
 while True:
     x += 1
     if x > 10:
@@ -15,7 +15,7 @@ while True:
     else:
         print(x)
 
-#方法二
+# 方法二
 y = 0
 while y < 11:
     y += 1
@@ -25,7 +25,7 @@ else:
     print("end")
 
 x = 0
-for x in range(1,10):
+for x in range(1, 10):
     if x % 2 == 1:
         print(x),
     else:
@@ -39,7 +39,7 @@ a = [1,2,3,4,5,6]
 2 用while语句操作上面的列表a，输出下面结果：
 [2,3,4,5,6,7]
 '''
-a = [1,2,3,4,5,6]
+a = [1, 2, 3, 4, 5, 6]
 for i in a:
     if i == 8:
         print("find"),
@@ -50,10 +50,6 @@ else:
 i = 0
 while i < a.__len__():
     a[i] += 1
-#    print(a[i])
+    #    print(a[i])
     i += 1
 print(a)
-
-
-
-

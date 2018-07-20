@@ -42,7 +42,7 @@ ax10 = plt.subplot(gs[-1, -2])
 # method 3: easy to define structure
 ####################################
 f, ((ax11, ax12), (ax13, ax14)) = plt.subplots(2, 2, sharex=True, sharey=True)
-ax11.scatter([1,2], [1,2])
+ax11.scatter([1, 2], [1, 2])
 
 plt.tight_layout()
 plt.show()

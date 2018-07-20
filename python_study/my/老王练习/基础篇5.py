@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 '''
 今天习题：
 1 ：
@@ -15,19 +15,19 @@ print a + b 的结果是什么，为什么会出现这个结果，如果希望�
 
 '''
 
-#1
+# 1
 info = "abc"
-#info[2] = "d"
+# info[2] = "d"
 
-#TypeError: 'str' object does not support item assignment
-#原因字符串为不可变类型
+# TypeError: 'str' object does not support item assignment
+# 原因字符串为不可变类型
 
-#2
-info2 = info.replace("c","d")
+# 2
+info2 = info.replace("c", "d")
 print(info2)
 
-#3
+# 3
 a = '1'
 b = 2
 
-print(int(a)+b)
+print(int(a) + b)

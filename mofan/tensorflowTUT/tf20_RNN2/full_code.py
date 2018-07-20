@@ -23,10 +23,10 @@ lr = 0.001
 training_iters = 100000
 batch_size = 128
 
-n_inputs = 28   # MNIST data input (img shape: 28*28)
-n_steps = 28    # time steps
-n_hidden_units = 128   # neurons in hidden layer
-n_classes = 10      # MNIST classes (0-9 digits)
+n_inputs = 28  # MNIST data input (img shape: 28*28)
+n_steps = 28  # time steps
+n_hidden_units = 128  # neurons in hidden layer
+n_classes = 10  # MNIST classes (0-9 digits)
 
 # tf Graph input
 x = tf.placeholder(tf.float32, [None, n_steps, n_inputs])
@@ -89,10 +89,10 @@ def RNN(X, weights, biases):
     # # or
     # unpack to list [(batch, outputs)..] * steps
     if int((tf.__version__).split('.')[1]) < 12 and int((tf.__version__).split('.')[0]) < 1:
-        outputs = tf.unpack(tf.transpose(outputs, [1, 0, 2]))    # states is the last outputs
+        outputs = tf.unpack(tf.transpose(outputs, [1, 0, 2]))  # states is the last outputs
     else:
-        outputs = tf.unstack(tf.transpose(outputs, [1,0,2]))
-    results = tf.matmul(outputs[-1], weights['out']) + biases['out']    # shape = (128, 10)
+        outputs = tf.unstack(tf.transpose(outputs, [1, 0, 2]))
+    results = tf.matmul(outputs[-1], weights['out']) + biases['out']  # shape = (128, 10)
 
     return results
 
@@ -122,10 +122,7 @@ with tf.Session() as sess:
         })
         if step % 20 == 0:
             print(sess.run(accuracy, feed_dict={
-            x: batch_xs,
-            y: batch_ys,
+                x: batch_xs,
+                y: batch_ys,
             }))
         step += 1
-
-
-

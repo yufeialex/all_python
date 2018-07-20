@@ -5,9 +5,9 @@
 
 import copy
 
-a = [1,2,3]
+a = [1, 2, 3]
 b = a
-b[1]=22
+b[1] = 22
 print(a)
 print(id(a) == id(b))
 
@@ -20,7 +20,7 @@ a[1] = 111
 print(c)
 
 # shallow copy
-a = [1,2,[3,4]]
+a = [1, 2, [3, 4]]
 d = copy.copy(a)
 print(id(a) == id(d))
 print(id(a[2]) == id(d[2]))

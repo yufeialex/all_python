@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 '''
 今天习题：
 
@@ -14,17 +14,16 @@ b = 'python'
 my name is jay,i love python.
 '''
 
-#1
+# 1
 a = "abcd"
 
-print(a[len(a)-1])
+print(a[len(a) - 1])
 print(a[-1])
 
-#2
+# 2
 
 aa = "jay"
 bb = "python"
 
-print ("my name is %s, i love %s" % ('aa','bb'))
-print ("my name is {name}, i love {love}" .format(name=aa,love=bb))   #推荐使用
-
+print("my name is %s, i love %s" % ('aa', 'bb'))
+print("my name is {name}, i love {love}".format(name=aa, love=bb))  # 推荐使用

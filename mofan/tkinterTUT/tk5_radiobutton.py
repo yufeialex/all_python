@@ -13,8 +13,10 @@ var = tk.StringVar()
 l = tk.Label(window, bg='yellow', width=20, text='empty')
 l.pack()
 
+
 def print_selection():
     l.config(text='you have selected ' + var.get())
+
 
 r1 = tk.Radiobutton(window, text='Option A',
                     variable=var, value='A',
@@ -28,6 +30,5 @@ r3 = tk.Radiobutton(window, text='Option C',
                     variable=var, value='C',
                     command=print_selection)
 r3.pack()
-
 
 window.mainloop()

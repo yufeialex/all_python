@@ -14,6 +14,7 @@ Thank you for supporting!
 # import os
 # os.environ['KERAS_BACKEND']='tensorflow'
 import numpy as np
+
 np.random.seed(1337)  # for reproducibility
 
 from keras.datasets import mnist
@@ -26,8 +27,8 @@ import matplotlib.pyplot as plt
 (x_train, _), (x_test, y_test) = mnist.load_data()
 
 # data pre-processing
-x_train = x_train.astype('float32') / 255. - 0.5       # minmax_normalized
-x_test = x_test.astype('float32') / 255. - 0.5         # minmax_normalized
+x_train = x_train.astype('float32') / 255. - 0.5  # minmax_normalized
+x_test = x_test.astype('float32') / 255. - 0.5  # minmax_normalized
 x_train = x_train.reshape((x_train.shape[0], -1))
 x_test = x_test.reshape((x_test.shape[0], -1))
 print(x_train.shape)
@@ -71,7 +72,3 @@ encoded_imgs = encoder.predict(x_test)
 plt.scatter(encoded_imgs[:, 0], encoded_imgs[:, 1], c=y_test)
 plt.colorbar()
 plt.show()
-
-
-
-

@@ -13,10 +13,12 @@ import theano
 import theano.tensor as T
 import pickle
 
+
 def compute_accuracy(y_target, y_predict):
     correct_prediction = np.equal(y_predict, y_target)
-    accuracy = np.sum(correct_prediction)/len(correct_prediction)
+    accuracy = np.sum(correct_prediction) / len(correct_prediction)
     return accuracy
+
 
 rng = np.random
 
@@ -40,15 +42,15 @@ b = theano.shared(0., name="b")
 # Construct Theano expression graph
 p_1 = 1 / (1 + T.exp(-T.dot(x, w) - b))
 prediction = p_1 > 0.5
-xent = -y * T.log(p_1) - (1-y) * T.log(1-p_1)
+xent = -y * T.log(p_1) - (1 - y) * T.log(1 - p_1)
 cost = xent.mean() + 0.01 * (w ** 2).sum()
 gw, gb = T.grad(cost, [w, b])
 
 # Compile
 learning_rate = 0.1
 train = theano.function(
-          inputs=[x, y],
-          updates=((w, w - learning_rate * gw), (b, b - learning_rate * gb)))
+    inputs=[x, y],
+    updates=((w, w - learning_rate * gw), (b, b - learning_rate * gb)))
 predict = theano.function(inputs=[x], outputs=prediction)
 
 # Training
@@ -69,5 +71,3 @@ with open('save/model.pickle', 'rb') as file:
     b.set_value(model[1])
     print(w.get_value()[:10])
     print("accuracy:", compute_accuracy(D[1], predict(D[0])))
-
-

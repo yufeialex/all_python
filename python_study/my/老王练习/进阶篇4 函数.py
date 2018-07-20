@@ -13,8 +13,9 @@ def get_cjsum(num):
     if not isinstance(num, int):
         return 'plz enter a int num.'
     for i in range(1, num):
-        sum_num = sum_num + i**2
+        sum_num = sum_num + i ** 2
     print(i)
     return sum_num
+
 
 print(get_cjsum(101))

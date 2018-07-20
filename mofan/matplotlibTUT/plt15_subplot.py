@@ -51,6 +51,5 @@ plt.subplot(236)
 # figure splits into 2 rows, 3 col, plot to the 6th sub-fig
 plt.plot([0, 1], [0, 4])
 
-
 plt.tight_layout()
 plt.show()

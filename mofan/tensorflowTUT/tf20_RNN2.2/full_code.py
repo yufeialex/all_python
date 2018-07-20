@@ -12,7 +12,6 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 BATCH_START = 0
 TIME_STEPS = 20
 BATCH_SIZE = 50
@@ -25,7 +24,7 @@ LR = 0.006
 def get_batch():
     global BATCH_START, TIME_STEPS
     # xs shape (50batch, 20steps)
-    xs = np.arange(BATCH_START, BATCH_START+TIME_STEPS*BATCH_SIZE).reshape((BATCH_SIZE, TIME_STEPS)) / (10*np.pi)
+    xs = np.arange(BATCH_START, BATCH_START + TIME_STEPS * BATCH_SIZE).reshape((BATCH_SIZE, TIME_STEPS)) / (10 * np.pi)
     seq = np.sin(xs)
     res = np.cos(xs)
     BATCH_START += TIME_STEPS
@@ -56,12 +55,12 @@ class LSTMRNN(object):
         with tf.name_scope('train'):
             self.train_op = tf.train.AdamOptimizer(LR).minimize(self.cost)
 
-    def add_input_layer(self,):
+    def add_input_layer(self, ):
         l_in_x = tf.reshape(self.xs, [-1, self.input_size], name='2_2D')  # (batch*n_step, in_size)
         # Ws (in_size, cell_size)
         Ws_in = self._weight_variable([self.input_size, self.cell_size])
         # bs (cell_size, )
-        bs_in = self._bias_variable([self.cell_size,])
+        bs_in = self._bias_variable([self.cell_size, ])
         # l_in_y = (batch * n_steps, cell_size)
         with tf.name_scope('Wx_plus_b'):
             l_in_y = tf.matmul(l_in_x, Ws_in) + bs_in
@@ -105,7 +104,7 @@ class LSTMRNN(object):
         return tf.square(tf.subtract(labels, logits))
 
     def _weight_variable(self, shape, name='weights'):
-        initializer = tf.random_normal_initializer(mean=0., stddev=1.,)
+        initializer = tf.random_normal_initializer(mean=0., stddev=1., )
         return tf.get_variable(shape=shape, initializer=initializer, name=name)
 
     def _bias_variable(self, shape, name='biases'):
@@ -134,15 +133,15 @@ if __name__ == '__main__':
         seq, res, xs = get_batch()
         if i == 0:
             feed_dict = {
-                    model.xs: seq,
-                    model.ys: res,
-                    # create initial state
+                model.xs: seq,
+                model.ys: res,
+                # create initial state
             }
         else:
             feed_dict = {
                 model.xs: seq,
                 model.ys: res,
-                model.cell_init_state: state    # use last state as the initial state for this run
+                model.cell_init_state: state  # use last state as the initial state for this run
             }
 
         _, cost, state, pred = sess.run(

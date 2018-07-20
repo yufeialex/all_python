@@ -5,6 +5,7 @@
 from __future__ import print_function
 import tensorflow as tf
 
+
 class TrainConfig:
     batch_size = 20
     time_steps = 20
@@ -66,7 +67,7 @@ class RNN(object):
                 bo = self._bias_variable((self._output_size,))
                 product = tf.matmul(cell_outputs_reshaped, Wo) + bo
                 # _pred shape (batch*time_step, output_size)
-                self._pred = tf.nn.relu(product)    # for displacement
+                self._pred = tf.nn.relu(product)  # for displacement
 
         with tf.name_scope('cost'):
             _pred = tf.reshape(self._pred, [self._batch_size, self._time_steps, self._output_size])

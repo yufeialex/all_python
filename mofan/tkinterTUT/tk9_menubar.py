@@ -12,10 +12,13 @@ window.geometry('200x200')
 l = tk.Label(window, text='', bg='yellow')
 l.pack()
 counter = 0
+
+
 def do_job():
     global counter
-    l.config(text='do '+ str(counter))
-    counter+=1
+    l.config(text='do ' + str(counter))
+    counter += 1
+
 
 menubar = tk.Menu(window)
 filemenu = tk.Menu(menubar, tearoff=0)
@@ -39,5 +42,3 @@ submenu.add_command(label="Submenu1", command=do_job)
 window.config(menu=menubar)
 
 window.mainloop()
-
-

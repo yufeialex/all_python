@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 '''
 今天习题：
 
@@ -10,7 +10,7 @@
 2 判断2是否在元组里
 '''
 print("1----------------")
-a = (1,2,3)
+a = (1, 2, 3)
 print("方法一")
 b = list(a)
 b[0] = 5
@@ -34,13 +34,13 @@ print(2 in set(a))
 
 '''
 print("2.1----------")
-a = set(['a','b','c'])
+a = set(['a', 'b', 'c'])
 a.add('jay')
 print(a)
 
 print("2.2----------")
 print("方法一")
-b = set(['b','e','f','g'])
+b = set(['b', 'e', 'f', 'g'])
 print(a | b)
 
 print("方法二")

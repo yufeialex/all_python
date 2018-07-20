@@ -1,7 +1,7 @@
 # __*__coding:utf-8__*__
 #  Author:   benson
 
-#coding=utf-8
+# coding=utf-8
 
 """
 进阶 面向对象第一节 初识class
@@ -11,33 +11,32 @@
 4.__init__方法
 5.class和函数的区别
 """
+
+
 class test(object):
+    """
+    get被称之为test对象的方法
+    """
 
-	"""
-	get被称之为test对象的方法
-	"""
+    def __init__(self, var2, var3):
+        self.var2 = var2
+        self.var3 = var3
 
-	def __init__(self,var2,var3):
-		self.var2 = var2
-		self.var3 = var3
+    def get(self, a=None):
+        return self.var3
 
-
-	def get(self,a=None):
-		return self.var3
-
-	pass
-
+    pass
 
 
 def get(a):
-	return a
+    return a
 
 
 """
 t是类test的一个实例
 """
-t = test('test str heiheihei','adfa')
-print (t.get())
+t = test('test str heiheihei', 'adfa')
+print(t.get())
 
 """
 如何去使用对象内置的方法

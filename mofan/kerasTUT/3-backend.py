@@ -44,4 +44,3 @@ define this before import keras:
 Using Theano backend.
 
 """
-

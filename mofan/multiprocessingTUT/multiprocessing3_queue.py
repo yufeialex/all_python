@@ -5,11 +5,13 @@
 
 import multiprocessing as mp
 
+
 def job(q):
     res = 0
     for i in range(1000):
-        res += i+i**2+i**3
-    q.put(res) # queue
+        res += i + i ** 2 + i ** 3
+    q.put(res)  # queue
+
 
 if __name__ == '__main__':
     q = mp.Queue()
@@ -21,5 +23,4 @@ if __name__ == '__main__':
     p2.join()
     res1 = q.get()
     res2 = q.get()
-    print(res1+res2)
-
+    print(res1 + res2)

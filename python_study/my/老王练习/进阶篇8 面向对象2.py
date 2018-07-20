@@ -13,6 +13,8 @@
 
 list_info = Listinfo([44,222,111,333,454,'sss','333'])
 '''
+
+
 class Listinfo(object):
     def __init__(self, arg1):
         self.arg1 = arg1
@@ -31,9 +33,9 @@ class Listinfo(object):
         else:
             return self.arg1[Num]
 
-list_info = Listinfo([44,222,111,333,454,'sss','333'])
-print(list_info.add_key('safas'))
 
+list_info = Listinfo([44, 222, 111, 333, 454, 'sss', '333'])
+print(list_info.add_key('safas'))
 
 '''
 定义一个集合的操作类：Setinfo
@@ -47,10 +49,6 @@ print(list_info.add_key('safas'))
 
 set_info =  Setinfo(你要操作的集合)
 '''
-
-
-
-
 
 """
 进阶课 面向对象
@@ -78,7 +76,6 @@ class test(object):
     def __del__(self):  ##析构函数
         del self.arg1
         del self.arg2
-
 
 # a 被称为 test的 属性
 # func_1  被称为 test的 方法

@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 '''
 今天习题
 1：
@@ -14,11 +14,10 @@ my name is pyer, i love apple.
 a = "pyer"
 b = "apple"
 
-print ("my name is {name},i love {love}" .format(name=a,love=b))
-print ("my,name is %(name)s, i love %(love)s" %{"name":a,"love":b})
+print("my name is {name},i love {love}".format(name=a, love=b))
+print("my,name is %(name)s, i love %(love)s" % {"name": a, "love": b})
 
-#2
-file=open("info.txt","w")
+# 2
+file = open("info.txt", "w")
 file.write("500\n")
 file.close()
-

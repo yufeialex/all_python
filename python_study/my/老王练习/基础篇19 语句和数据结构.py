@@ -1,4 +1,4 @@
-#coding = utf-8
+# coding = utf-8
 # 今天习题：
 
 '''
@@ -9,10 +9,11 @@
 '''
 print("++++++++++1")
 import string
-#import str
+
+# import str
 a = "aAsmr3idd4bgs7Dlsf9eAF"
 a = ''.join([x for x in a if not x.isdigit()])
-#print(sorted(a,key=string.ascii_uppercase))
+# print(sorted(a,key=string.ascii_uppercase))
 
 '''
 2. 已知字典：
@@ -23,18 +24,17 @@ ainfo = {'b':'python','a':'haha','c':'hehe','f':'xiaoming'}
 ('b', 'python')
 ('f', 'xiaoming')
 '''
-ainfo = {'b':'python','a':'haha','c':'hehe','f':'xiaoming'}
+ainfo = {'b': 'python', 'a': 'haha', 'c': 'hehe', 'f': 'xiaoming'}
 
 for i in ainfo.keys():
     print(i)
 
-
 list_a = []
-for x,y in ainfo.items():
-    list_a.append((x,y))
-for x in sorted(list_a,key=lambda k:k[1]):
+for x, y in ainfo.items():
+    list_a.append((x, y))
+for x in sorted(list_a, key=lambda k: k[1]):
     print(x)
-#print([(x,y) for  in ainfo.keys() ])
+# print([(x,y) for  in ainfo.keys() ])
 
 
 '''
@@ -45,7 +45,7 @@ b
 f
 '''
 print("+++++++++++++++2.2.1")
-ainfo = {'b':'python','a':'haha','c':'hehe','f':'xiaoming'}
+ainfo = {'b': 'python', 'a': 'haha', 'c': 'hehe', 'f': 'xiaoming'}
 for x in ainfo.keys():
     print(x)
 print("++++++++++2.2.2")
@@ -58,10 +58,10 @@ for x in a[::2]:
 
 '''
 print("++++++++2.3")
-ainfo = {'b':'python','a':'haha','c':'hehe','f':'xiaoming'}
+ainfo = {'b': 'python', 'a': 'haha', 'c': 'hehe', 'f': 'xiaoming'}
 search_value = 'haha'
 key_list = []
 for x, y in ainfo.items():
     if y == search_value:
         key_list.append(x)
-print (key_list)
+print(key_list)

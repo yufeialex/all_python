@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 '''
 字典习题:
 
@@ -19,19 +19,19 @@ ainfo = {'ab':'liming','ac':20,'sex':'man','age':20}
 5 通过2个方法删除键名ac对应的值。
 
 '''
-anfo = {'ab':"liming","ac":20}
+anfo = {'ab': "liming", "ac": 20}
 print("1-----------")
 print("方法一")
-anfo['sex']='man'
-anfo['age']=20
+anfo['sex'] = 'man'
+anfo['age'] = 20
 print(anfo)
 print("方法二")
-anfo = {'ab':"liming","ac":20}
-anfo.update({'sex':'man','age':20})
+anfo = {'ab': "liming", "ac": 20}
+anfo.update({'sex': 'man', 'age': 20})
 print(anfo)
 
 print("2--------------")
-anfo = {'ab':"liming","ac":20}
+anfo = {'ab': "liming", "ac": 20}
 print(anfo.keys())
 
 print("3------------")
@@ -48,10 +48,9 @@ print("方法一")
 del anfo['ac']
 print(anfo)
 print("方法二")
-anfo = {'ab':"liming","ac":20}
+anfo = {'ab': "liming", "ac": 20}
 anfo.pop('ac')
 print(anfo)
 print("--------------has_key")
-binfo = {'a':1,'b':2}
+binfo = {'a': 1, 'b': 2}
 print('a' in binfo)
-

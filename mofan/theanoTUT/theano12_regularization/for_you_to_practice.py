@@ -17,7 +17,7 @@ import numpy as np
 class Layer(object):
     def __init__(self, inputs, in_size, out_size, activation_function=None):
         self.W = theano.shared(np.random.normal(0, 1, (in_size, out_size)))
-        self.b = theano.shared(np.zeros((out_size, )) + 0.1)
+        self.b = theano.shared(np.zeros((out_size,)) + 0.1)
         self.Wx_plus_b = T.dot(inputs, self.W) + self.b
         self.activation_function = activation_function
         if activation_function is None:
@@ -31,6 +31,7 @@ def minmax_normalization(data):
     xs_min = np.min(data, axis=0)
     xs = (1 - 0) * (data - xs_min) / (xs_max - xs_min) + 0
     return xs
+
 
 np.random.seed(100)
 x_data = load_boston().data

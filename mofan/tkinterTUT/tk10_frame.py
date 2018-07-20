@@ -21,12 +21,3 @@ tk.Label(frm_l, text='on the frm_l1').pack()
 tk.Label(frm_l, text='on the frm_l2').pack()
 tk.Label(frm_r, text='on the frm_r1').pack()
 window.mainloop()
-
-
-
-
-
-
-
-
-

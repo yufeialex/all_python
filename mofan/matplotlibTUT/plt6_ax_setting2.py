@@ -15,8 +15,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 x = np.linspace(-3, 3, 50)
-y1 = 2*x + 1
-y2 = x**2
+y1 = 2 * x + 1
+y2 = x ** 2
 
 plt.figure()
 plt.plot(x, y2)
@@ -50,5 +50,5 @@ ax.spines['bottom'].set_position(('data', 0))
 ax.yaxis.set_ticks_position('left')
 # ACCEPTS: [ 'left' | 'right' | 'both' | 'default' | 'none' ]
 
-ax.spines['left'].set_position(('data',0))
+ax.spines['left'].set_position(('data', 0))
 plt.show()

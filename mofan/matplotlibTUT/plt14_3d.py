@@ -60,4 +60,3 @@ ax.contourf(X, Y, Z, zdir='z', offset=-2, cmap=plt.get_cmap('rainbow'))
 ax.set_zlim(-2, 2)
 
 plt.show()
-

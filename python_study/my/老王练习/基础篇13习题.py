@@ -1,4 +1,4 @@
-#coding = utf-8
+# coding = utf-8
 '''
 ##习题1：
 列表a = [11,22,24,29,30,32]
@@ -9,13 +9,13 @@
 4 对列表从小到大排序
 
 '''
-a = [11,22,24,29,30,32]
+a = [11, 22, 24, 29, 30, 32]
 print("1.1--------")
 a.append(28)
 print(a)
 
 print("1.2--------")
-a.insert(4,57)
+a.insert(4, 57)
 print(a)
 
 print("1.3--------")
@@ -24,7 +24,7 @@ print(a)
 
 print("1.4--------")
 del a[5]
-#a.pop(5)
+# a.pop(5)
 print(a)
 
 print("1.5--------")
@@ -41,18 +41,18 @@ print(a)
 '''
 print("2.1---------")
 print("方法一")
-b = [1,2,3,4,5]
-c = [6,7,8]
+b = [1, 2, 3, 4, 5]
+c = [6, 7, 8]
 print(b + c)
 print("方法二")
-b = [1,2,3,4,5]
+b = [1, 2, 3, 4, 5]
 b.append(6)
 b.append(7)
 b.append(8)
 print(b)
 print("方法三")
-b = [1,2,3,4,5]
-b.extend([6,7,8])
+b = [1, 2, 3, 4, 5]
+b.extend([6, 7, 8])
 print(b)
 
 print("2.2----------")
@@ -63,10 +63,8 @@ print("方法一")
 b.reverse()
 print(b[3:5])
 
-
-
 print("2.3----------")
-#c = set(b)
+# c = set(b)
 print(2 in b)
 
 '''
@@ -79,8 +77,8 @@ b = [23,45,22,44,25,66,78]
 
 '''
 print("3.1-----------")
-b = [23,45,22,44,25,66,78]
-print([x for x in b if x % 2 ==1])
+b = [23, 45, 22, 44, 25, 66, 78]
+print([x for x in b if x % 2 == 1])
 
 print("3.2-----------")
 print(['the conten %s' % i for i in b[:2]])
@@ -93,8 +91,7 @@ print([i + 2 for i in b])
 用range方法和列表推导的方法生成列表：
 [11,22,33]
 '''
-print([x * 11 for x in range(1,4)])
-
+print([x * 11 for x in range(1, 4)])
 
 '''
 ##习题5：
@@ -102,7 +99,7 @@ print([x * 11 for x in range(1,4)])
 1 判断元素4是否在元组里
 2 把元素5修改成8
 '''
-a = (1,4,5,6,7)
+a = (1, 4, 5, 6, 7)
 print("5.1----------")
 print(4 in a)
 
@@ -132,7 +129,6 @@ print("6.3-----------")
 print(setinfo & finfo)
 print(setinfo | finfo)
 
-
 '''
 ##习题7：
 用字典的方式完成下面一个小型的学生管理系统。
@@ -148,13 +144,13 @@ print(setinfo | finfo)
 '''
 print("7.1-------------")
 student = {}
-student['liming']={'name':'liming','age':25,'score':{'chinese':80,'math':75,'englist':85}}
-student['zhangqiang']={'name':'zhangqiang','age':23,'score':{'chinese':75,'math':83,'englist':78}}
+student['liming'] = {'name': 'liming', 'age': 25, 'score': {'chinese': 80, 'math': 75, 'englist': 85}}
+student['zhangqiang'] = {'name': 'zhangqiang', 'age': 23, 'score': {'chinese': 75, 'math': 83, 'englist': 78}}
 print(student)
 
 print("7.2---------")
-student['liming']['score']['python']=60
-student['zhangqiang']['score']['python']=80
+student['liming']['score']['python'] = 60
+student['zhangqiang']['score']['python'] = 80
 print(student)
 
 print("7.3-----------")
@@ -165,9 +161,8 @@ print("7.4-----------")
 print(student['liming'].pop('age'))
 print(student)
 
-
 print("7.5-----------")
 print(sorted(student['zhangqiang']['score'].values()))
 
 print("7.6----------")
-print(student.pop('city','beijing'))
+print(student.pop('city', 'beijing'))

@@ -18,18 +18,15 @@
 定义一个函数xulie(dirname,info) 参数：dirname:路径名，info:需要序列化的数据，功能：将info数据序列化存储到dirname路径下随机的文件里。  
 '''
 
-
-
 import time
 import datetime
-print time.ctime()
-print time.gmtime()
-print help(time)
-#print time.sleep()
-print datetime.time()
 
-
-
-
-
-
+print
+time.ctime()
+print
+time.gmtime()
+print
+help(time)
+# print time.sleep()
+print
+datetime.time()

@@ -12,15 +12,17 @@ import numpy as np
 import theano
 import theano.tensor as T
 
+
 def compute_accuracy(y_target, y_predict):
     correct_prediction = np.equal(y_predict, y_target)
-    accuracy = np.sum(correct_prediction)/len(correct_prediction)
+    accuracy = np.sum(correct_prediction) / len(correct_prediction)
     return accuracy
+
 
 rng = np.random
 
-N = 400                                   # training sample size
-feats = 784                               # number of input variables
+N = 400  # training sample size
+feats = 784  # number of input variables
 
 # generate a dataset: D = (input_values, target_class)
 D = (rng.randn(N, feats), rng.randint(size=N, low=0, high=2))
@@ -47,4 +49,3 @@ print("target values for D:")
 print('')
 print("prediction on D:")
 print('')
-
