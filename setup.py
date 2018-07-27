@@ -22,5 +22,5 @@ setup(
     license="MIT",
     keywords="hello world example",
     url="http://example.com/HelloWorld/",  # 项目主页
-    long_description=__doc__,  # 从代码中获取文档注释
+    long_description=__doc__, install_requires=['tornado', 'prometheus_client']  # 从代码中获取文档注释
 )
